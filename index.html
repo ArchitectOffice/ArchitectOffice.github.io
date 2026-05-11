@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="utf-8" />
@@ -17,343 +16,202 @@
 />
 
 <!-- FONTS -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+  rel="stylesheet"
+/>
 
 <style>
 
 /* =========================================================
-   CORE
+   BASE
 ========================================================= */
-
-:root{
-  --bg: #0c0f12;
-  --panel: #13181d;
-  --panel-2: #171d23;
-  --border: rgba(130,170,190,0.14);
-  --text: #d7e0e7;
-  --muted: #94a3ad;
-  --signal: #9ed0d8;
-  --signal-soft: rgba(158,208,216,0.08);
-  --signal-line: rgba(158,208,216,0.18);
-}
-
-html{
-  scroll-behavior:smooth;
-}
 
 body{
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'Inter', sans-serif;
-  overflow-x:hidden;
+  font-family:'Inter', sans-serif;
+  color:#212529;
+  background:#ffffff;
+}
+
+section{
+  padding-top:100px;
+  padding-bottom:100px;
 }
 
 /* =========================================================
-   NAVBAR
+   NAV
 ========================================================= */
 
-.runtime-nav{
-  background: rgba(10,12,14,0.92);
-  backdrop-filter: blur(10px);
-  border-bottom:1px solid rgba(255,255,255,0.05);
-  padding-top:14px;
-  padding-bottom:14px;
+#mainNav{
+  background:#212529;
   transition:all .3s ease;
 }
 
-.brand-runtime{
-  font-size:0.92rem;
-  letter-spacing:2px;
+.navbar-brand{
   font-weight:600;
-  color:#ffffff !important;
-}
-
-.navbar-nav .nav-link{
-  color:rgba(255,255,255,0.72) !important;
-  font-size:0.88rem;
   letter-spacing:1px;
-  margin-left:18px;
-  transition:all .3s ease;
 }
 
-.navbar-nav .nav-link:hover{
-  color:var(--signal) !important;
+.nav-link{
+  font-size:0.95rem;
+  letter-spacing:0.5px;
 }
 
 /* =========================================================
-   HERO
+   HEADER
 ========================================================= */
 
-.hero-runtime{
-  position:relative;
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  overflow:hidden;
+header{
+  padding-top:160px;
+  padding-bottom:140px;
   background:
-    radial-gradient(circle at top,
-      rgba(80,120,140,0.08),
-      transparent 45%),
     linear-gradient(
       180deg,
-      #0b0e11 0%,
-      #0f1317 100%
+      #212529 0%,
+      #2c3136 100%
     );
+  position:relative;
+  overflow:hidden;
 }
 
-/* subtle grid */
+/* subtle runtime grid */
 
-.runtime-grid{
-  position:absolute;
-  inset:0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-
-  background-size:40px 40px;
-  mask-image: radial-gradient(circle at center, black 30%, transparent 85%);
-  opacity:.5;
-}
-
-/* scan line */
-
-.hero-runtime::after{
+header::before{
   content:"";
   position:absolute;
-  left:0;
-  top:-10%;
-  width:100%;
-  height:120px;
+  inset:0;
 
-  background:linear-gradient(
-    to bottom,
-    transparent,
-    rgba(158,208,216,0.05),
-    transparent
-  );
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
 
-  animation:scan 8s linear infinite;
+  background-size:40px 40px;
+
+  opacity:.25;
   pointer-events:none;
 }
 
-@keyframes scan{
-  0%{ transform:translateY(-200px); }
-  100%{ transform:translateY(120vh); }
-}
-
-.hero-content{
+header .container{
   position:relative;
   z-index:2;
-  max-width:900px;
 }
 
 /* =========================================================
    LOGO
 ========================================================= */
 
-.logo-wrapper{
-  margin-bottom:30px;
-}
-
 .hero-logo{
-  width:240px;
-  max-width:100%;
-  opacity:.96;
-  filter:drop-shadow(0 0 18px rgba(255,255,255,0.04));
-}
-
-/* =========================================================
-   SYSTEM TAGS
-========================================================= */
-
-.system-tag,
-.section-tag{
-  display:inline-block;
-
-  font-family:'JetBrains Mono', monospace;
-  font-size:0.74rem;
-  letter-spacing:2px;
-
-  color:var(--signal);
-
-  border:1px solid var(--signal-line);
-
-  background:var(--signal-soft);
-
-  padding:10px 16px;
-  margin-bottom:24px;
-}
-
-.section-tag{
+  max-width:300px;
+  height:auto;
   margin-bottom:20px;
 }
 
 /* =========================================================
-   HERO TEXT
+   SYSTEM LABELS
 ========================================================= */
 
-.hero-title{
-  font-size:3.5rem;
-  font-weight:600;
-  line-height:1.1;
-  margin-bottom:24px;
-}
+.system-label{
+  display:inline-block;
 
-.hero-lead{
-  color:var(--muted);
-  font-size:1.15rem;
-  line-height:1.8;
-  max-width:760px;
-  margin:auto;
-  margin-bottom:40px;
+  font-family:'JetBrains Mono', monospace;
+  font-size:0.72rem;
+  letter-spacing:2px;
+
+  padding:8px 14px;
+
+  margin-bottom:24px;
+
+  border:1px solid rgba(255,255,255,0.15);
+
+  color:rgba(255,255,255,0.82);
 }
 
 /* =========================================================
-   STATUS
+   HERO
 ========================================================= */
 
-.runtime-status{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
+header h1{
+  font-size:3rem;
+  margin-bottom:24px;
+}
+
+header .lead{
+  max-width:720px;
+  margin:auto;
+  margin-bottom:36px;
+
+  color:rgba(255,255,255,0.78);
+}
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.btn-runtime{
+  border-radius:0;
+  padding:12px 28px;
+  letter-spacing:1px;
+  transition:all .3s ease;
+}
+
+.btn-runtime:hover{
+  transform:translateY(-1px);
+}
+
+/* =========================================================
+   SECTION LABELS
+========================================================= */
+
+.section-label{
+  font-family:'JetBrains Mono', monospace;
+  font-size:0.72rem;
+  letter-spacing:2px;
+
+  color:#6c757d;
+
+  margin-bottom:16px;
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+h2{
+  margin-bottom:24px;
+  font-weight:600;
+}
+
+.lead{
+  line-height:1.8;
+}
+
+/* =========================================================
+   DIAGNOSTIC LIST
+========================================================= */
+
+.diagnostic-list{
+  list-style:none;
+  padding-left:0;
+  margin-top:30px;
+}
+
+.diagnostic-list li{
+  padding-top:18px;
+  padding-bottom:18px;
+
+  border-top:1px solid rgba(0,0,0,0.08);
+}
+
+.diag-title{
+  display:block;
 
   font-family:'JetBrains Mono', monospace;
   font-size:0.82rem;
   letter-spacing:1px;
 
-  color:#b8c6ce;
+  margin-bottom:8px;
 
-  margin-bottom:40px;
-}
-
-.status-dot{
-  width:10px;
-  height:10px;
-  border-radius:50%;
-  background:var(--signal);
-
-  box-shadow:0 0 12px rgba(158,208,216,0.8);
-
-  animation:pulse 2s infinite;
-}
-
-@keyframes pulse{
-  0%{ opacity:.4; transform:scale(.9); }
-  50%{ opacity:1; transform:scale(1.05); }
-  100%{ opacity:.4; transform:scale(.9); }
-}
-
-/* =========================================================
-   BUTTONS
-========================================================= */
-
-.runtime-button{
-  background:transparent;
-  color:#fff;
-  border:1px solid rgba(255,255,255,0.16);
-  padding:14px 30px;
-  border-radius:0;
-  letter-spacing:1px;
-  transition:all .35s ease;
-}
-
-.runtime-button:hover{
-  background:rgba(255,255,255,0.04);
-  color:var(--signal);
-  border-color:var(--signal-line);
-}
-
-/* =========================================================
-   SECTIONS
-========================================================= */
-
-.runtime-section{
-  padding-top:120px;
-  padding-bottom:120px;
-  position:relative;
-}
-
-.runtime-alt{
-  background:linear-gradient(
-    180deg,
-    rgba(255,255,255,0.02),
-    rgba(255,255,255,0.01)
-  );
-}
-
-/* =========================================================
-   PANELS
-========================================================= */
-
-.runtime-panel{
-  background:linear-gradient(
-    180deg,
-    rgba(255,255,255,0.02),
-    rgba(255,255,255,0.01)
-  );
-
-  border:1px solid var(--border);
-
-  padding:55px;
-
-  position:relative;
-
-  overflow:hidden;
-}
-
-.runtime-panel::before{
-  content:"";
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:1px;
-
-  background:linear-gradient(
-    90deg,
-    transparent,
-    rgba(158,208,216,0.4),
-    transparent
-  );
-}
-
-.runtime-panel h2{
-  font-size:2rem;
-  margin-bottom:24px;
-}
-
-.runtime-panel p{
-  color:var(--muted);
-  line-height:1.9;
-  font-size:1.02rem;
-}
-
-.runtime-panel .lead{
-  color:#dbe5ec;
-  margin-bottom:24px;
-}
-
-/* =========================================================
-   DIAGNOSTICS
-========================================================= */
-
-.diag-item{
-  border-top:1px solid rgba(255,255,255,0.05);
-  padding-top:24px;
-  padding-bottom:24px;
-}
-
-.diag-label{
-  display:inline-block;
-
-  font-family:'JetBrains Mono', monospace;
-  letter-spacing:2px;
-
-  color:var(--signal);
-
-  margin-bottom:10px;
+  color:#212529;
 }
 
 /* =========================================================
@@ -361,25 +219,9 @@ body{
 ========================================================= */
 
 .runtime-flow{
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  justify-content:center;
-  gap:16px;
-
   font-family:'JetBrains Mono', monospace;
-
-  font-size:1rem;
-  letter-spacing:2px;
-
-  color:var(--signal);
-
-  margin-top:30px;
-  margin-bottom:40px;
-}
-
-.runtime-flow span{
-  opacity:.5;
+  letter-spacing:1px;
+  color:#495057;
 }
 
 /* =========================================================
@@ -387,84 +229,56 @@ body{
 ========================================================= */
 
 .contact-block{
-  border-top:1px solid rgba(255,255,255,0.06);
-  padding-top:24px;
-  padding-bottom:24px;
+  margin-bottom:28px;
 }
 
-.contact-block span{
+.contact-label{
   display:block;
 
   font-family:'JetBrains Mono', monospace;
-  font-size:0.8rem;
+  font-size:0.75rem;
   letter-spacing:2px;
 
-  color:var(--signal);
+  margin-bottom:8px;
 
-  margin-bottom:10px;
+  color:rgba(255,255,255,0.7);
 }
 
-.contact-block a{
-  color:#dbe5ec;
+#contact a{
+  color:#ffffff;
   text-decoration:none;
-  transition:all .3s ease;
 }
 
-.contact-block a:hover{
-  color:var(--signal);
+#contact a:hover{
+  text-decoration:underline;
 }
 
 /* =========================================================
    FOOTER
 ========================================================= */
 
-.runtime-footer{
-  border-top:1px solid rgba(255,255,255,0.05);
-  padding-top:40px;
-  padding-bottom:40px;
-
-  background:#090b0d;
-}
-
-.runtime-footer p{
-  color:rgba(255,255,255,0.45);
-  letter-spacing:1px;
-  font-size:0.85rem;
+footer{
+  border-top:1px solid rgba(255,255,255,0.08);
 }
 
 /* =========================================================
    RESPONSIVE
 ========================================================= */
 
-@media(max-width:991px){
-
-  .hero-title{
-    font-size:2.6rem;
-  }
-
-  .runtime-panel{
-    padding:36px;
-  }
-
-}
-
 @media(max-width:768px){
 
-  .hero-title{
-    font-size:2.1rem;
+  header{
+    padding-top:140px;
+    padding-bottom:120px;
   }
 
-  .hero-lead{
-    font-size:1rem;
+  header h1{
+    font-size:2.2rem;
   }
 
-  .runtime-panel{
-    padding:28px;
-  }
-
-  .runtime-section{
-    padding-top:90px;
-    padding-bottom:90px;
+  section{
+    padding-top:80px;
+    padding-bottom:80px;
   }
 
 }
@@ -476,12 +290,12 @@ body{
 <body id="page-top">
 
 <!-- NAV -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top runtime-nav" id="mainNav">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
 
   <div class="container px-4">
 
-    <a class="navbar-brand brand-runtime" href="#page-top">
-      ARCHITECT OFFICE
+    <a class="navbar-brand" href="#page-top">
+      Architect Office
     </a>
 
     <button class="navbar-toggler"
@@ -510,7 +324,7 @@ body{
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="#contact">Engagement</a>
+          <a class="nav-link" href="#contact">Contact</a>
         </li>
 
       </ul>
@@ -521,89 +335,71 @@ body{
 
 </nav>
 
-<!-- HERO -->
-<header class="hero-runtime text-white">
+<!-- HEADER -->
+<header class="bg-dark text-white">
 
-  <div class="runtime-grid"></div>
+  <div class="container px-4 text-center">
 
-  <div class="container px-4 text-center hero-content">
-
-    <div class="logo-wrapper">
-
+    <!-- LOGO -->
+    <div>
       <img
         src="assets/logo.png"
         alt="Architect Office Logo"
         class="hero-logo"
       />
-
     </div>
 
-    <div class="system-tag">
-      [ OPERATIONAL SYSTEMS DIAGNOSTICS ]
+    <div class="system-label">
+      OPERATIONAL SYSTEMS DIAGNOSTICS
     </div>
 
-    <h1 class="hero-title">
+    <h1 class="fw-bolder">
       Structural Analysis For Complex Systems
     </h1>
 
-    <p class="lead hero-lead">
-      Structured interpretation of workflow instability,
-      operational fragmentation,
+    <p class="lead">
+      Structured analysis of system behaviour,
+      workflow instability,
       and decision breakdown.
     </p>
 
-    <div class="runtime-status">
-
-      <span class="status-dot"></span>
-
-      SYSTEM STATUS: ACTIVE
-
-    </div>
-
-    <div>
-      <a class="btn runtime-button btn-lg" href="#overview">
-        Enter Framework
-      </a>
-    </div>
+    <a class="btn btn-light btn-lg btn-runtime" href="#overview">
+      Enter Framework
+    </a>
 
   </div>
 
 </header>
 
 <!-- OVERVIEW -->
-<section id="overview" class="runtime-section">
+<section id="overview">
 
   <div class="container px-4">
 
-    <div class="row justify-content-center">
+    <div class="row gx-4 justify-content-center">
 
       <div class="col-lg-8">
 
-        <div class="runtime-panel">
-
-          <div class="section-tag">
-            [ SYSTEM OVERVIEW ]
-          </div>
-
-          <h2>
-            Operational Signal Interpretation
-          </h2>
-
-          <p class="lead">
-            Systems rarely fail suddenly.
-            Structural degradation emerges through unresolved
-            misalignment between intent,
-            process,
-            and execution.
-          </p>
-
-          <p>
-            Architect Office isolates breakdown points
-            and translates operational ambiguity into
-            structured diagnostic clarity.
-          </p>
-
+        <div class="section-label">
+          SYSTEM OVERVIEW
         </div>
+
+        <h2>
+          System Overview
+        </h2>
+
+        <p class="lead">
+          Systems rarely fail suddenly.
+          They degrade through misalignment between intent,
+          structure,
+          and execution.
+        </p>
+
+        <p>
+          Architect Office identifies where that breakdown occurs
+          and translates it into structured,
+          actionable clarity.
+        </p>
 
       </div>
 
@@ -614,63 +410,55 @@ body{
 </section>
 
 <!-- DIAGNOSTICS -->
-<section id="diagnostics" class="runtime-section runtime-alt">
+<section class="bg-light" id="diagnostics">
 
   <div class="container px-4">
 
-    <div class="row justify-content-center">
+    <div class="row gx-4 justify-content-center">
 
       <div class="col-lg-8">
 
-        <div class="runtime-panel">
-
-          <div class="section-tag">
-            [ DIAGNOSTIC LAYERS ]
-          </div>
-
-          <h2>
-            Structured Diagnostic Framework
-          </h2>
-
-          <div class="diag-item">
-
-            <div class="diag-label">
-              RD-0 RAPID DIAGNOSTIC
-            </div>
-
-            <p>
-              Entry-level structural triage and rapid signal assessment.
-            </p>
-
-          </div>
-
-          <div class="diag-item">
-
-            <div class="diag-label">
-              OSD OPERATIONAL SYSTEMS DIAGNOSTIC
-            </div>
-
-            <p>
-              Full operational systems analysis and structural failure mapping.
-            </p>
-
-          </div>
-
-          <div class="diag-item">
-
-            <div class="diag-label">
-              COHERENCY SESSIONS
-            </div>
-
-            <p>
-              Alignment sessions focused on restoring clarity,
-              continuity,
-              and operational stability.
-            </p>
-
-          </div>
-
+        <div class="section-label">
+          DIAGNOSTIC LAYERS
         </div>
+
+        <h2>
+          Diagnostic Layers
+        </h2>
+
+        <ul class="diagnostic-list">
+
+          <li>
+
+            <span class="diag-title">
+              RD-0 RAPID DIAGNOSTIC
+            </span>
+
+            Entry-level structural triage and rapid signal assessment.
+
+          </li>
+
+          <li>
+
+            <span class="diag-title">
+              OSD OPERATIONAL SYSTEMS DIAGNOSTIC
+            </span>
+
+            Full operational systems diagnostic and structural failure analysis.
+
+          </li>
+
+          <li>
+
+            <span class="diag-title">
+              COHERENCY SESSIONS
+            </span>
+
+            System alignment and clarity structuring.
+
+          </li>
+
+        </ul>
 
       </div>
 
@@ -681,46 +469,30 @@ body{
 </section>
 
 <!-- PROCESS -->
-<section id="process" class="runtime-section">
+<section id="process">
 
   <div class="container px-4">
 
-    <div class="row justify-content-center">
+    <div class="row gx-4 justify-content-center">
 
       <div class="col-lg-8">
 
-        <div class="runtime-panel">
-
-          <div class="section-tag">
-            [ PROCESS FLOW ]
-          </div>
-
-          <h2>
-            Interpretation Sequence
-          </h2>
-
-          <div class="runtime-flow">
-
-            SIGNAL
-            <span>→</span>
-
-            STRUCTURE
-            <span>→</span>
-
-            DIAGNOSIS
-            <span>→</span>
-
-            CLARITY
-
-          </div>
-
-          <p>
-            Each layer progressively reduces ambiguity,
-            isolates instability,
-            and reconstructs coherent operational structure.
-          </p>
-
+        <div class="section-label">
+          PROCESS FLOW
         </div>
+
+        <h2>
+          How It Works
+        </h2>
+
+        <p class="lead runtime-flow">
+          SIGNAL → STRUCTURE → DIAGNOSIS → CLARITY
+        </p>
+
+        <p>
+          Each layer reduces ambiguity and isolates structural
+          failure points within complex operational systems.
+        </p>
 
       </div>
 
@@ -731,53 +503,55 @@ body{
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="runtime-section runtime-alt">
+<section id="contact" class="bg-dark text-white">
 
   <div class="container px-4">
 
-    <div class="row justify-content-center">
+    <div class="row gx-4 justify-content-center">
 
       <div class="col-lg-8">
 
-        <div class="runtime-panel">
+        <div class="section-label text-light">
+          ENGAGEMENT
+        </div>
 
-          <div class="section-tag">
-            [ ENGAGEMENT ]
-          </div>
+        <h2>
+          Structured Access
+        </h2>
 
-          <h2>
-            Structured Access
-          </h2>
+        <div class="contact-block">
 
-          <div class="contact-block">
+          <span class="contact-label">
+            EMAIL
+          </span>
 
-            <span>EMAIL</span>
+          <a href="mailto:ArchtOff@outlook.com">
+            ArchtOff@outlook.com
+          </a>
 
-            <a href="mailto:ArchtOff@outlook.com">
-              ArchtOff@outlook.com
-            </a>
+        </div>
 
-          </div>
+        <div class="contact-block">
 
-          <div class="contact-block">
+          <span class="contact-label">
+            BOOKING
+          </span>
 
-            <span>BOOKING</span>
+          <a href="https://cal.com/architectoffice/private">
+            cal.com/architectoffice/private
+          </a>
 
-            <a href="https://cal.com/architectoffice/private">
-              cal.com/architectoffice/private
-            </a>
+        </div>
 
-          </div>
+        <div class="contact-block">
 
-          <div class="contact-block">
+          <span class="contact-label">
+            LINKTREE
+          </span>
 
-            <span>LINKTREE</span>
-
-            <a href="https://linktr.ee/ArchitectOffice">
-              linktr.ee/ArchitectOffice
-            </a>
-
-          </div>
+          <a href="https://linktr.ee/ArchitectOffice">
+            linktr.ee/ArchitectOffice
+          </a>
 
         </div>
 
@@ -790,12 +564,12 @@ body{
 </section>
 
 <!-- FOOTER -->
-<footer class="runtime-footer">
+<footer class="py-5 bg-dark">
 
   <div class="container px-4">
 
-    <p class="m-0 text-center">
-      ARCHITECT OFFICE • OPERATIONAL SYSTEMS DIAGNOSTICS
+    <p class="m-0 text-center text-white">
+      Architect Office | Operational Systems Diagnostics
     </p>
 
   </div>
