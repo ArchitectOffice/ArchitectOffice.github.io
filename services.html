@@ -2,19 +2,13 @@
 <html lang="en">
 
 <head>
-
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-<title>Architect Office | Services</title>
-
-<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+<title>Services | Architect Office</title>
 
 <link href="css/styles.css" rel="stylesheet" />
-
 <link rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
-
 </head>
 
 <body id="page-top">
@@ -24,36 +18,25 @@
 
   <div class="container px-4">
 
-    <a class="navbar-brand" href="index.html">
-      Architect Office
-    </a>
+    <a class="navbar-brand" href="index.html">Architect Office</a>
 
     <button class="navbar-toggler" type="button"
       data-bs-toggle="collapse"
       data-bs-target="#navbarResponsive">
-
       <span class="navbar-toggler-icon"></span>
-
     </button>
 
     <div class="collapse navbar-collapse" id="navbarResponsive">
 
       <ul class="navbar-nav ms-auto">
 
-        <li class="nav-item">
-          <a class="nav-link" href="index.html#overview">Overview</a>
-        </li>
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="pricing.html">Engagement</a></li>
 
         <li class="nav-item">
-          <a class="nav-link" href="index.html#diagnostics">Diagnostics</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link active" href="services.html">Services</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="pricing.html">Engagement</a>
+          <a class="nav-link" href="https://cal.com/architectoffice/private" target="_blank">
+            Book Call
+          </a>
         </li>
 
       </ul>
@@ -65,85 +48,67 @@
 </nav>
 
 <!-- HEADER -->
-<header class="bg-dark text-white">
+<header class="bg-dark text-white py-5">
 
   <div class="container px-4 text-center">
 
     <h1 class="fw-bolder">Services</h1>
 
-    <p class="lead" style="max-width:900px; margin:20px auto;">
-      Structured diagnostic and cognitive systems applied to operational environments, AI interaction, and decision architectures.
+    <p class="lead">
+      Structured diagnostic services for system clarity, operational stability, and AI coherence.
     </p>
 
   </div>
 
 </header>
 
-<!-- SERVICES LIST (HORIZONTAL PANELS) -->
+<!-- SERVICE CARDS -->
 <section class="py-5">
 
   <div class="container px-4">
 
-    <!-- RD-0 -->
-    <div class="row align-items-center border rounded shadow-sm p-4 mb-4">
+    <div class="row g-4">
 
-      <div class="col-lg-4">
-        <h3>RD-0 Rapid Diagnostic</h3>
+      <!-- RD-0 -->
+      <div class="col-md-4">
+        <div class="p-4 border rounded shadow-sm h-100">
+
+          <h3>RD-0 Rapid Diagnostic</h3>
+          <p>Entry-level system failure detection and classification.</p>
+
+          <a class="btn btn-dark w-100 mt-3" href="service-rd0.html">
+            View RD-0
+          </a>
+
+        </div>
       </div>
 
-      <div class="col-lg-8">
-        <p class="mb-0">
-          Entry-level structural triage used to determine whether a real system failure exists.
-          Identifies instability patterns and maps initial structural breakdown points.
-        </p>
+      <!-- OSD -->
+      <div class="col-md-4">
+        <div class="p-4 border rounded shadow-sm h-100">
+
+          <h3>OSD Diagnostic</h3>
+          <p>Deep structural analysis of operational system failures.</p>
+
+          <a class="btn btn-dark w-100 mt-3" href="service-osd.html">
+            View OSD
+          </a>
+
+        </div>
       </div>
 
-    </div>
+      <!-- AI LENS -->
+      <div class="col-md-4">
+        <div class="p-4 border rounded shadow-sm h-100">
 
-    <!-- OSD -->
-    <div class="row align-items-center border rounded shadow-sm p-4 mb-4">
+          <h3>AI Cognitive Lens</h3>
+          <p>Structured cognition applied to AI systems and workflows.</p>
 
-      <div class="col-lg-4">
-        <h3>OSD Operational Systems Diagnostic</h3>
-      </div>
+          <a class="btn btn-dark w-100 mt-3" href="service-ai-lens.html">
+            View AI Lens
+          </a>
 
-      <div class="col-lg-8">
-        <p class="mb-0">
-          Deep system analysis for confirmed failure conditions.
-          Maps causality, dependency structures, and failure propagation across operational layers.
-        </p>
-      </div>
-
-    </div>
-
-    <!-- AI LENS -->
-    <div class="row align-items-center border rounded shadow-sm p-4 mb-4">
-
-      <div class="col-lg-4">
-        <h3>AI Cognitive Lens Session</h3>
-      </div>
-
-      <div class="col-lg-8">
-        <p class="mb-0">
-          Structured cognition applied to AI interaction systems.
-          Improves prompt stability, decision clarity, and workflow coherence.
-        </p>
-      </div>
-
-    </div>
-
-    <!-- INTEGRATION -->
-    <div class="row align-items-center border rounded shadow-sm p-4 mb-4">
-
-      <div class="col-lg-4">
-        <h3>Extended Integration</h3>
-      </div>
-
-      <div class="col-lg-8">
-        <p class="mb-0">
-          Long-term structural alignment of AI-assisted operational systems.
-          Focus on iterative refinement and system-wide coherence stability.
-        </p>
+        </div>
       </div>
 
     </div>
@@ -151,21 +116,6 @@
   </div>
 
 </section>
-
-<!-- FOOTER -->
-<footer class="py-4 bg-dark text-white">
-
-  <div class="container px-4 text-center">
-
-    <p class="text-white-50 m-0" style="font-size:0.85rem;">
-      © 2026 Architect Office | Services Layer
-    </p>
-
-  </div>
-
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
