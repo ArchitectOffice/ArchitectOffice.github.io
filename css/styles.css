@@ -10864,3 +10864,57 @@ p {
   font-size: 1.05rem;
   line-height: 1.75;
 }
+h1, h2, h3, h4 {
+  letter-spacing: -0.02em;
+}
+
+p {
+  line-height: 1.6;
+  color: #2b2b2b;
+}
+.border.rounded {
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  background: #ffffff;
+}
+
+.border.rounded:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.10);
+}
+.btn {
+  border-radius: 10px;
+  padding: 12px 22px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+.bi {
+  margin-right: 6px;
+  vertical-align: middle;
+  opacity: 0.9;
+}
+section {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+header p.lead {
+  opacity: 0.9;
+}
+/* ===== HERO TEXT FIX ===== */
+
+header.bg-dark,
+header.bg-dark p,
+header.bg-dark .lead {
+  color: #ffffff !important;
+}
