@@ -1,0 +1,48 @@
+<form action="https://formspree.io/f/mvzlndnl" method="POST">
+
+  <!-- SYSTEM IDENTIFIER -->
+  <input type="hidden" name="source" value="Architect Office Intake">
+
+  <h2>Structured Intake</h2>
+
+  <p>Select the system category:</p>
+
+  <select name="system_type" required>
+    <option value="">-- Select --</option>
+    <option value="RD-0 Rapid Diagnostic">RD-0 Rapid Diagnostic</option>
+    <option value="OSD Operational Systems Diagnostics">OSD Operational Systems Diagnostics</option>
+    <option value="AI Cognitive Lens">AI Cognitive Lens</option>
+  </select>
+
+  <hr>
+
+  <label>1. Current State</label>
+  <textarea name="current_state" required></textarea>
+
+  <label>2. Expected State</label>
+  <textarea name="expected_state" required></textarea>
+
+  <label>3. Breakdown Point</label>
+  <textarea name="breakdown_point"></textarea>
+
+  <label>4. Stability Pattern</label>
+  <select name="stability_pattern">
+    <option value="Stable">Stable</option>
+    <option value="Intermittent">Intermittent</option>
+    <option value="Degrading">Degrading</option>
+    <option value="Unknown">Unknown</option>
+  </select>
+
+  <label>5. Systems Involved</label>
+  <textarea name="systems_involved"></textarea>
+
+  <hr>
+
+  <label>Email (for response)</label>
+  <input type="email" name="email" required>
+
+  <button type="submit">
+    Submit Diagnostic Intake
+  </button>
+
+</form>
