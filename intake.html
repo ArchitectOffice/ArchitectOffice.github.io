@@ -1,48 +1,181 @@
-<form action="https://formspree.io/f/mvzlndnl" method="POST">
+<!DOCTYPE html>
+<html lang="en">
 
-  <!-- SYSTEM IDENTIFIER -->
-  <input type="hidden" name="source" value="Architect Office Intake">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <h2>Structured Intake</h2>
+<title>Structured Intake | Architect Office</title>
 
-  <p>Select the system category:</p>
+<link rel="icon" href="assets/favicon.ico" />
+<link href="css/styles.css" rel="stylesheet" />
 
-  <select name="system_type" required>
-    <option value="">-- Select --</option>
-    <option value="RD-0 Rapid Diagnostic">RD-0 Rapid Diagnostic</option>
-    <option value="OSD Operational Systems Diagnostics">OSD Operational Systems Diagnostics</option>
-    <option value="AI Cognitive Lens">AI Cognitive Lens</option>
-  </select>
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
 
-  <hr>
+</head>
 
-  <label>1. Current State</label>
-  <textarea name="current_state" required></textarea>
+<body id="page-top">
 
-  <label>2. Expected State</label>
-  <textarea name="expected_state" required></textarea>
+<!-- NAV -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 
-  <label>3. Breakdown Point</label>
-  <textarea name="breakdown_point"></textarea>
+  <div class="container px-4">
 
-  <label>4. Stability Pattern</label>
-  <select name="stability_pattern">
-    <option value="Stable">Stable</option>
-    <option value="Intermittent">Intermittent</option>
-    <option value="Degrading">Degrading</option>
-    <option value="Unknown">Unknown</option>
-  </select>
+    <a class="navbar-brand" href="index.html">
+      Architect Office
+    </a>
 
-  <label>5. Systems Involved</label>
-  <textarea name="systems_involved"></textarea>
+    <button class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarResponsive">
 
-  <hr>
+      <span class="navbar-toggler-icon"></span>
 
-  <label>Email (for response)</label>
-  <input type="email" name="email" required>
+    </button>
 
-  <button type="submit">
-    Submit Diagnostic Intake
-  </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
 
-</form>
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="services.html">Services</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="pricing.html">Engagement</a>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</nav>
+
+<!-- HEADER -->
+<header class="bg-dark text-white py-5">
+
+  <div class="container px-4 text-center">
+
+    <h1 class="fw-bolder">Structured Intake</h1>
+
+    <p class="lead">
+      System classification layer for RD-0, OSD, and AI Cognitive Lens diagnostics.
+    </p>
+
+  </div>
+
+</header>
+
+<!-- FORM SECTION -->
+<section class="py-5">
+
+  <div class="container px-4">
+
+    <div class="row justify-content-center">
+
+      <div class="col-lg-8">
+
+        <div class="p-4 p-md-5 border rounded bg-white shadow-sm">
+
+          <h2 class="mb-3">Diagnostic Intake</h2>
+
+          <p class="text-muted mb-4">
+            Provide structured input to classify system instability before engagement.
+          </p>
+
+          <form action="https://formspree.io/f/mvzlndnl" method="POST">
+
+            <!-- SYSTEM TYPE -->
+            <div class="mb-3">
+              <label class="form-label">System Type</label>
+              <select class="form-select" name="system_type" required>
+                <option value="">Select...</option>
+                <option>RD-0 Rapid Diagnostic</option>
+                <option>OSD Operational Systems Diagnostics</option>
+                <option>AI Cognitive Lens</option>
+              </select>
+            </div>
+
+            <!-- CURRENT STATE -->
+            <div class="mb-3">
+              <label class="form-label">Current State</label>
+              <textarea class="form-control" name="current_state" rows="4" required></textarea>
+            </div>
+
+            <!-- EXPECTED STATE -->
+            <div class="mb-3">
+              <label class="form-label">Expected State</label>
+              <textarea class="form-control" name="expected_state" rows="4" required></textarea>
+            </div>
+
+            <!-- BREAKDOWN -->
+            <div class="mb-3">
+              <label class="form-label">Breakdown Point</label>
+              <textarea class="form-control" name="breakdown_point" rows="3"></textarea>
+            </div>
+
+            <!-- STABILITY -->
+            <div class="mb-3">
+              <label class="form-label">Stability Pattern</label>
+              <select class="form-select" name="stability_pattern">
+                <option>Stable</option>
+                <option>Intermittent</option>
+                <option>Degrading</option>
+                <option>Unknown</option>
+              </select>
+            </div>
+
+            <!-- SYSTEMS -->
+            <div class="mb-3">
+              <label class="form-label">Systems Involved</label>
+              <textarea class="form-control" name="systems_involved" rows="3"></textarea>
+            </div>
+
+            <!-- EMAIL -->
+            <div class="mb-4">
+              <label class="form-label">Email</label>
+              <input class="form-control" type="email" name="email" required>
+            </div>
+
+            <button class="btn btn-dark w-100" type="submit">
+              Submit Diagnostic Intake
+            </button>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="py-4 bg-dark">
+
+  <div class="container px-4">
+
+    <p class="m-0 text-center text-white-50" style="font-size:0.85rem;">
+      © 2026 Architect Office. All rights reserved.
+    </p>
+
+  </div>
+
+</footer>
+
+<!-- BOOTSTRAP -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
