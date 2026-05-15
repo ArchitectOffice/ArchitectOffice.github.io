@@ -10918,3 +10918,36 @@ header.bg-dark p,
 header.bg-dark .lead {
   color: #ffffff !important;
 }
+/* ===== MOBILE STABILITY FIX ===== */
+
+@media (max-width: 768px) {
+
+  header {
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .lead {
+    font-size: 1.1rem;
+  }
+}
+#structured-access p,
+#structured-access h1,
+#structured-access h2,
+#structured-access h3,
+#structured-access h4,
+#structured-access .lead {
+  color: #ffffff !important;
+}
