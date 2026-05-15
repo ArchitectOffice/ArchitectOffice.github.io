@@ -10951,3 +10951,7 @@ header.bg-dark .lead {
 #structured-access .lead {
   color: #ffffff !important;
 }
+header img {
+  display: block;
+  margin: 0 auto;
+}
