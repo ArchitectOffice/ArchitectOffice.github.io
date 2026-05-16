@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>RD-0 Manual | Book View</title>
+
+<!-- If this page is inside a folder, change paths accordingly -->
+<link rel="icon" href="../assets/favicon.ico" />
+<link href="../css/styles.css" rel="stylesheet" />
+
+<style>
+  body {
+    margin: 0;
+    background: #111;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  }
+
+  /* HEADER BAR (minimal, clean) */
+  .topbar {
+    padding: 14px 20px;
+    background: #0b0b0b;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .topbar a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  .topbar a:hover {
+    color: white;
+  }
+
+  /* PDF VIEWER */
+  .viewer {
+    height: calc(100vh - 52px);
+    width: 100%;
+  }
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: white;
+  }
+</style>
+
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div>RD-0 Manual</div>
+  <a href="../index.html">← Return</a>
+</div>
+
+<!-- PDF VIEWER -->
+<div class="viewer">
+
+  <!-- IMPORTANT: correct assets path -->
+<iframe src="assets/rd0-manual.pdf"></iframe>
+
+</div>
+
+</body>
+</html>
