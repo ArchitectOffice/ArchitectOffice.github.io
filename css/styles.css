@@ -11009,4 +11009,7 @@ p {
     padding-bottom: 60px;
   }
 }
+#diagnostics {
+  scroll-margin-top: 0px;
+}
 
