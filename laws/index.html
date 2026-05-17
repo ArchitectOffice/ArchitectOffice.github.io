@@ -6,169 +6,156 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>Architect Office | System Console</title>
+<title>Law Ledger | Architect Office</title>
 
-<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-<link href="css/styles.css" rel="stylesheet" />
+<link rel="icon" href="../assets/favicon.ico" />
+<link href="../css/styles.css" rel="stylesheet" />
 
 <link rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
-
-<style>
-
-body {
-  background: #0f0f10;
-}
-
-.console-hero {
-  padding-top: 90px;
-  padding-bottom: 60px;
-  text-align: center;
-  color: #fff;
-}
-
-.console-subtitle {
-  opacity: 0.75;
-  max-width: 900px;
-  margin: 20px auto 0;
-  line-height: 1.7;
-}
-
-.node-grid {
-  padding: 40px 0 80px;
-}
-
-.node-card {
-  background: #ffffff;
-  border-radius: 14px;
-  padding: 30px;
-  height: 100%;
-  transition: 0.2s ease;
-  border: 1px solid rgba(0,0,0,0.08);
-}
-
-.node-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(0,0,0,0.2);
-}
-
-.node-title {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-top: 10px;
-}
-
-.node-desc {
-  opacity: 0.75;
-  margin-top: 10px;
-}
-
-.node-icon {
-  font-size: 2rem;
-}
-
-.node-button {
-  margin-top: 20px;
-}
-
-.system-footer {
-  text-align: center;
-  padding: 30px 0;
-  opacity: 0.5;
-  font-size: 0.85rem;
-  color: #fff;
-}
-
-</style>
 
 </head>
 
 <body id="page-top">
 
-<!-- HERO -->
-<header class="console-hero">
+<!-- NAV -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 
   <div class="container px-4">
 
-    <img src="assets/logo.png"
-         alt="Architect Office"
-         style="max-width:280px; margin-bottom:25px;" />
+    <a class="navbar-brand" href="../index.html">
+      Architect Office
+    </a>
 
-    <h1 class="fw-bolder">SYSTEM CONSOLE</h1>
+    <button class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarResponsive">
 
-    <p class="console-subtitle">
-      Structured interface for cognitive diagnostics, system interpretation, and
-      formalised reasoning layers. All interaction routes through controlled entry nodes.
+      <span class="navbar-toggler-icon"></span>
+
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html">Laws</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="../services.html">Services</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="../intake.html">Intake</a>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</nav>
+
+<!-- HEADER -->
+<header class="bg-dark text-white">
+
+  <div class="container px-4 text-center" style="padding-top:25px; padding-bottom:70px;">
+
+    <h1 class="fw-bolder">LAW LEDGER</h1>
+
+    <p class="lead" style="max-width:900px; margin:20px auto 0;">
+      Structured registry of RD-0 formalised principles derived from validated system observations and stabilised cognitive patterns.
     </p>
 
   </div>
 
 </header>
 
-<!-- SYSTEM NODES -->
-<section class="node-grid">
+<!-- INTRO -->
+<section class="py-5">
+
+  <div class="container px-4 text-center">
+
+    <h2>System Overview</h2>
+
+    <p class="mt-3">
+      The Law Ledger contains stabilised system rules derived from repeated observational consistency.
+      Each law represents a compressed structural pattern governing system behaviour under RD-0 analysis.
+    </p>
+
+  </div>
+
+</section>
+
+<!-- ACTIVE LAWS -->
+<section class="bg-light py-5">
 
   <div class="container px-4">
 
-    <div class="row g-4 justify-content-center">
+    <h2 class="text-center mb-5">Active Laws</h2>
 
-      <!-- JOURNAL -->
-      <div class="col-md-4">
+    <div class="row justify-content-center">
 
-        <div class="node-card text-center">
+      <div class="col-lg-8">
 
-          <i class="bi bi-journal-text node-icon"></i>
+        <div class="p-4 border rounded text-center">
 
-          <div class="node-title">Journal</div>
-
-          <div class="node-desc">
-            Raw observational layer for interaction drift, system behaviour, and cognitive anomalies.
+          <div class="text-muted mb-2" style="font-size:0.85rem;">
+            RD-0 CORE LAW
           </div>
 
-          <a class="btn btn-dark node-button" href="journal/ai-interaction-drift.html">
-            Enter Journal
+          <h4>SAP-0 — Substrate Alignment Principle</h4>
+
+          <p class="mt-3">
+            An inference system achieves maximal reasoning fidelity when the representational structure of a domain
+            is isomorphic to its native linguistic token space.
+          </p>
+
+          <p class="text-muted mt-3">
+            Performance scales with alignment between world structure and language structure.
+          </p>
+
+          <a class="btn btn-dark mt-3" href="sap-0.html">
+            Open Law
           </a>
 
         </div>
 
       </div>
 
-      <!-- LAWS -->
-      <div class="col-md-4">
+    </div>
 
-        <div class="node-card text-center">
+  </div>
 
-          <i class="bi bi-diagram-3 node-icon"></i>
+</section>
 
-          <div class="node-title">Law Ledger</div>
+<!-- FUTURE LAWS -->
+<section class="py-5">
 
-          <div class="node-desc">
-            Stabilised RD-0 principles and formalised structural rules derived from validated observations.
-          </div>
+  <div class="container px-4">
 
-          <a class="btn btn-dark node-button" href="laws/index.html">
-            Enter Laws
-          </a>
+    <div class="row justify-content-center">
 
-        </div>
+      <div class="col-lg-8">
 
-      </div>
+        <div class="p-4 border rounded text-center">
 
-      <!-- SERVICES -->
-      <div class="col-md-4">
+          <h4>Future Law Registry</h4>
 
-        <div class="node-card text-center">
+          <p class="mt-3">
+            Emerging RD-0 principles under observation. Pending stabilisation and formal classification.
+          </p>
 
-          <i class="bi bi-cpu node-icon"></i>
-
-          <div class="node-title">Services</div>
-
-          <div class="node-desc">
-            Applied diagnostic execution layer for structured system analysis and cognitive alignment work.
-          </div>
-
-          <a class="btn btn-dark node-button" href="services.html">
-            Enter Services
+          <a class="btn btn-outline-dark mt-3" href="future-laws.html">
+            Enter Registry
           </a>
 
         </div>
@@ -182,11 +169,25 @@ body {
 </section>
 
 <!-- FOOTER -->
-<footer class="system-footer">
+<footer class="py-4 bg-dark text-white">
 
-  © 2026 Architect Office • RD-0 System Console
+  <div class="container px-4 text-center">
+
+    <img src="../assets/raven.png"
+         width="60"
+         height="60"
+         style="opacity:0.9; display:block; margin:0 auto;" />
+
+    <p class="text-white-50 m-0 mt-2" style="font-size:0.85rem;">
+      © 2026 Architect Office
+    </p>
+
+  </div>
 
 </footer>
+
+<!-- BOOTSTRAP -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
