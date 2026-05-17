@@ -1,1 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>New Journal Entry | RD-0 Capture Interface</title>
+
+<link rel="icon" href="../assets/favicon.ico" />
+<link href="../css/styles.css" rel="stylesheet" />
+
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+
+<style>
+
+body {
+  background: #fff;
+}
+
+.header {
+  background: #111;
+  color: #fff;
+  padding: 80px 20px 50px;
+  text-align: center;
+}
+
+.meta {
+  font-size: 0.75rem;
+  opacity: 0.6;
+  letter-spacing: 0.15em;
+}
+
+h1 {
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+.subtitle {
+  max-width: 900px;
+  margin: 20px auto 0;
+  opacity: 0.75;
+  line-height: 1.7;
+}
+
+.container-narrow {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section {
+  padding: 50px 20px;
+}
+
+.form-block {
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 14px;
+  padding: 25px;
+  margin-bottom: 18px;
+}
+
+label {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  opacity: 0.6;
+  display: block;
+  margin-bottom: 8px;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.15);
+  font-size: 1rem;
+  outline: none;
+}
+
+textarea {
+  min-height: 120px;
+}
+
+.row {
+  display: flex;
+  gap: 15px;
+}
+
+.row > div {
+  flex: 1;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 8px;
+  border: 1px solid #111;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.hint {
+  font-size: 0.85rem;
+  opacity: 0.6;
+  margin-top: 6px;
+}
+
+.footer {
+  text-align: center;
+  padding: 40px 20px;
+  opacity: 0.5;
+  font-size: 0.85rem;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+
+  <div class="meta">RD-0 SIGNAL CAPTURE INTERFACE</div>
+
+  <h1>New Journal Entry</h1>
+
+  <div class="subtitle">
+    Structured input layer for capturing system observations, interaction drift, and emergent behavioural signals.
+    Entries created here feed directly into the Journal → Future Law pipeline.
+  </div>
+
+</header>
+
+<!-- FORM -->
+<section class="section">
+
+  <div class="container-narrow">
+
+    <!-- TITLE -->
+    <div class="form-block">
+      <label>ENTRY TITLE</label>
+      <input type="text" placeholder="Short descriptive label of the observation">
+      <div class="hint">Keep it structural, not narrative.</div>
+    </div>
+
+    <!-- TYPE + CONFIDENCE -->
+    <div class="row">
+
+      <div class="form-block">
+        <label>TYPE</label>
+        <select>
+          <option>Observation</option>
+          <option>System Behaviour</option>
+          <option>Hypothesis</option>
+          <option>Interaction Drift</option>
+          <option>Anomaly</option>
+        </select>
+      </div>
+
+      <div class="form-block">
+        <label>CONFIDENCE</label>
+        <select>
+          <option>Low</option>
+          <option>Medium</option>
+          <option>High</option>
+        </select>
+      </div>
+
+    </div>
+
+    <!-- CONTEXT -->
+    <div class="form-block">
+      <label>CONTEXT</label>
+      <textarea placeholder="Where and how this was observed (system, AI interaction, process, etc.)"></textarea>
+    </div>
+
+    <!-- RAW OBSERVATION -->
+    <div class="form-block">
+      <label>RAW OBSERVATION</label>
+      <textarea placeholder="Describe what happened (no interpretation required)"></textarea>
+    </div>
+
+    <!-- SIGNAL -->
+    <div class="form-block">
+      <label>SIGNAL EXTRACTED</label>
+      <textarea placeholder="What is the structural insight or pattern?"></textarea>
+    </div>
+
+    <!-- REPEATABILITY -->
+    <div class="form-block">
+      <label>REPEATABILITY</label>
+      <select>
+        <option>One-off</option>
+        <option>Repeated</option>
+        <option>Stable Pattern</option>
+      </select>
+    </div>
+
+    <!-- RD-0 TAG -->
+    <div class="form-block">
+      <label>RD-0 TAG</label>
+      <select>
+        <option>RD-0E (External System)</option>
+        <option>RD-0I (Internal Inference)</option>
+        <option>RD-0H (Human Layer)</option>
+      </select>
+    </div>
+
+    <!-- SUBMIT -->
+    <div style="text-align:center; margin-top:30px;">
+      <button class="btn">
+        Capture Journal Entry
+      </button>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+  RD-0 JOURNAL SYSTEM • CAPTURE NODE • ARCHITECT OFFICE
+
+</footer>
+
+</body>
+
+</html>
