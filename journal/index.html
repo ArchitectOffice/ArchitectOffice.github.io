@@ -139,7 +139,7 @@ h1 {
 
   <div class="subtitle">
     Structured capture layer for system observations, interaction drift, and emergent behavioural patterns.
-    Entries here form the raw substrate for future law generation.
+    Entries are dynamically rendered from the RD-0 journal store.
   </div>
 
 </header>
@@ -147,71 +147,18 @@ h1 {
 <!-- CTA -->
 <section class="cta">
 
-<a class="btn-law" href="entry-template.html">
-  + New Journal Entry
-</a>
+  <a class="btn-law" href="entry-template.html">
+    + New Journal Entry
+  </a>
 
 </section>
 
 <!-- ENTRIES -->
 <section class="section">
 
-  <div class="container-narrow">
+  <div class="container-narrow" id="journalContainer">
 
-    <!-- EXAMPLE ENTRY -->
-    <div class="entry-card">
-
-      <div class="label">TYPE: SYSTEM BEHAVIOUR</div>
-
-      <div class="title">AI Interaction Drift Observed in Ambiguous Prompting</div>
-
-      <div class="meta-line">
-        CONFIDENCE: Medium • REPEATABILITY: Observed Pattern
-      </div>
-
-      <div class="block">
-        When intent is underspecified, language models resolve ambiguity through probabilistic completion rather than structural constraint alignment.
-      </div>
-
-      <div class="block">
-        This produces outputs that appear coherent but lack stable internal causal structure across reasoning steps.
-      </div>
-
-      <div class="block">
-        SIGNAL EXTRACTED: drift increases as constraint density decreases.
-      </div>
-
-      <div>
-        <span class="tag">RD-0I</span>
-        <span class="tag">SAP-0 related</span>
-      </div>
-
-    </div>
-
-    <!-- SECOND ENTRY (TEMPLATE STYLE) -->
-    <div class="entry-card">
-
-      <div class="label">TYPE: OBSERVATION</div>
-
-      <div class="title">Template Entry Structure Stabilisation</div>
-
-      <div class="meta-line">
-        CONFIDENCE: High • REPEATABILITY: Stable Pattern
-      </div>
-
-      <div class="block">
-        Structured journaling improves downstream classification accuracy in law generation pipelines.
-      </div>
-
-      <div class="block">
-        SIGNAL EXTRACTED: structure improves transformability into formal systems.
-      </div>
-
-      <div>
-        <span class="tag">RD-0H</span>
-      </div>
-
-    </div>
+    <!-- dynamic entries injected here -->
 
   </div>
 
@@ -219,10 +166,73 @@ h1 {
 
 <!-- FOOTER -->
 <footer class="footer">
-
-  © 2026 Architect Office • RD-0 Journal System Node
-
+  RD-0 JOURNAL SYSTEM • LIVE REGISTRY NODE • ARCHITECT OFFICE
 </footer>
+
+<!-- RENDER ENGINE -->
+<script>
+
+function loadJournal() {
+
+  const container = document.getElementById("journalContainer");
+
+  let journal = JSON.parse(localStorage.getItem("rd0_journal") || "[]");
+
+  container.innerHTML = "";
+
+  if (journal.length === 0) {
+
+    container.innerHTML = `
+      <div class="entry-card">
+        <div class="label">SYSTEM</div>
+        <div class="title">No Journal Entries Found</div>
+        <div class="block">
+          Capture your first RD-0 signal using the entry interface.
+        </div>
+      </div>
+    `;
+
+    return;
+  }
+
+  journal.forEach(entry => {
+
+    const card = document.createElement("div");
+    card.className = "entry-card";
+
+    card.innerHTML = `
+
+      <div class="label">TYPE: ${entry.type}</div>
+
+      <div class="title">${entry.title}</div>
+
+      <div class="meta-line">
+        CONFIDENCE: ${entry.confidence} • ${new Date(entry.timestamp).toLocaleString()}
+      </div>
+
+      <div class="block"><b>CONTEXT:</b> ${entry.context}</div>
+
+      <div class="block"><b>RAW:</b> ${entry.raw}</div>
+
+      <div class="block"><b>SIGNAL:</b> ${entry.signal}</div>
+
+      <div class="block"><b>REPEATABILITY:</b> ${entry.repeatability}</div>
+
+      <div>
+        <span class="tag">${entry.tag}</span>
+      </div>
+
+    `;
+
+    container.appendChild(card);
+
+  });
+
+}
+
+window.onload = loadJournal;
+
+</script>
 
 </body>
 
