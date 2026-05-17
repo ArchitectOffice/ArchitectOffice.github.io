@@ -6,7 +6,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>Future Law Registry | RD-0 Pipeline</title>
+<title>Future Law Registry | SAP-0 Pipeline</title>
 
 <link rel="icon" href="../assets/favicon.ico" />
 <link href="../css/styles.css" rel="stylesheet" />
@@ -89,6 +89,30 @@ h1 {
   margin-right: 5px;
 }
 
+.status {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+.status.APPROVED {
+  border: 1px solid #2e7d32;
+  color: #2e7d32;
+}
+
+.status.WEAK {
+  border: 1px solid #ff9800;
+  color: #ff9800;
+}
+
+.status.REJECTED {
+  border: 1px solid #c62828;
+  color: #c62828;
+}
+
 .actions {
   margin-top: 15px;
   display: flex;
@@ -140,13 +164,13 @@ h1 {
 <!-- HEADER -->
 <header class="header">
 
-  <div class="meta">RD-0 LAW PIPELINE</div>
+  <div class="meta">RD-0 / SAP-0 VALIDATION LAYER</div>
 
   <h1>Future Law Registry</h1>
 
   <div class="subtitle">
-    Structured queue of emergent law candidates extracted from journal signals.
-    Entries here are pending validation against SAP-0 and RD-0 structural coherence rules.
+    Candidate law queue derived from journal signals.
+    Each entry is evaluated through the SAP-0 alignment engine before promotion to canonical RD-0 law status.
   </div>
 
 </header>
@@ -154,23 +178,57 @@ h1 {
 <!-- CONTENT -->
 <section class="section">
 
-  <div class="container-narrow" id="lawContainer">
-
-    <!-- dynamic entries -->
-
-  </div>
+  <div class="container-narrow" id="lawContainer"></div>
 
 </section>
 
 <!-- FOOTER -->
 <footer class="footer">
-
-  RD-0 FUTURE LAW PIPELINE • ARCHITECT OFFICE
-
+  RD-0 LAW PIPELINE • SAP-0 ENGINE • ARCHITECT OFFICE
 </footer>
 
 <!-- ENGINE -->
 <script>
+
+function sap0Score(entry) {
+
+  let score = 0;
+
+  const text = (entry.signal + " " + entry.context).toLowerCase();
+
+  const structuredKeywords = [
+    "system", "structure", "mapping", "alignment",
+    "model", "function", "law", "space", "domain"
+  ];
+
+  structuredKeywords.forEach(k => {
+    if (text.includes(k)) score += 10;
+  });
+
+  if (entry.signal.includes("→") || entry.signal.includes("=")) {
+    score += 15;
+  }
+
+  const weakWords = ["maybe", "feels like", "i think", "kind of"];
+
+  weakWords.forEach(w => {
+    if (text.includes(w)) score -= 10;
+  });
+
+  if (entry.tag && entry.tag.includes("RD-0I")) score += 10;
+  if (entry.tag && entry.tag.includes("RD-0E")) score += 5;
+  if (entry.tag && entry.tag.includes("RD-0H")) score += 2;
+
+  return Math.max(0, Math.min(100, score));
+}
+
+function classify(score) {
+
+  if (score >= 70) return "APPROVED";
+  if (score >= 40) return "WEAK";
+  return "REJECTED";
+
+}
 
 function loadFutureLaws() {
 
@@ -178,22 +236,24 @@ function loadFutureLaws() {
 
   let journal = JSON.parse(localStorage.getItem("rd0_journal") || "[]");
 
-  // Treat ALL journal entries as future-law candidates for now
+  container.innerHTML = "";
+
   if (journal.length === 0) {
 
     container.innerHTML = `
       <div class="empty">
         No law candidates detected.<br><br>
-        Create journal entries to populate the pipeline.
+        Create journal entries to activate SAP-0 pipeline.
       </div>
     `;
 
     return;
   }
 
-  container.innerHTML = "";
-
   journal.forEach((entry, index) => {
+
+    const score = sap0Score(entry);
+    const status = classify(score);
 
     const card = document.createElement("div");
     card.className = "card";
@@ -214,9 +274,13 @@ function loadFutureLaws() {
 
       <div class="block"><b>TIMESTAMP:</b> ${new Date(entry.timestamp).toLocaleString()}</div>
 
+      <div class="block">
+        <b>SAP-0 SCORE:</b> ${score} / 100
+      </div>
+
       <div>
         <span class="tag">${entry.tag}</span>
-        <span class="tag">FUTURE-LAW</span>
+        <span class="status ${status}">${status}</span>
       </div>
 
       <div class="actions">
@@ -245,9 +309,9 @@ function promote(i) {
 
   const entry = journal[i];
 
-  alert("Promoted to law candidate:\n\n" + entry.title);
+  alert("Promoted to RD-0 candidate:\n\n" + entry.title);
 
-  // placeholder for next stage (SAP-0 validation system)
+  // future: move to canonical law registry
 }
 
 function archive(i) {
