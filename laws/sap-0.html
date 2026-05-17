@@ -15,8 +15,43 @@
 
 body {
   margin: 0;
-  background: #fff;
+  background: #f7f7f7;
   font-family: Arial, sans-serif;
+  color: #111;
+}
+
+/* NAVIGATION */
+
+.navbar {
+  background: #0d0d0d;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 14px 20px;
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.nav-links a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 0.92rem;
+}
+
+.nav-links a:hover {
+  color: #fff;
 }
 
 /* HEADER */
@@ -24,7 +59,7 @@ body {
 .header {
   background: #111;
   color: #fff;
-  padding: 80px 20px 60px;
+  padding: 90px 20px 70px;
   text-align: center;
 }
 
@@ -35,69 +70,111 @@ body {
 }
 
 h1 {
-  margin-top: 10px;
-  font-size: 2.2rem;
+  margin-top: 12px;
+  font-size: 2.6rem;
+  font-weight: 700;
 }
 
 .subtitle {
   max-width: 900px;
-  margin: 20px auto 0;
-  opacity: 0.75;
-  line-height: 1.6;
+  margin: 22px auto 0;
+  opacity: 0.78;
+  line-height: 1.7;
+  font-size: 1.05rem;
 }
 
-/* CONTENT */
+/* SYSTEM STRIP */
+
+.system-strip {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 38px;
+  flex-wrap: wrap;
+}
+
+.sys-box {
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  padding: 14px 18px;
+  min-width: 150px;
+  background: rgba(255,255,255,0.03);
+}
+
+.sys-label {
+  font-size: 0.68rem;
+  opacity: 0.55;
+  letter-spacing: 0.18em;
+}
+
+.sys-value {
+  margin-top: 7px;
+  font-size: 0.96rem;
+  font-weight: 600;
+}
+
+/* MAIN CONTENT */
 
 .container {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 70px 20px;
 }
 
+.section-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  opacity: 0.45;
+  margin-bottom: 24px;
+}
+
+/* CARD */
+
 .card {
-  border: 1px solid rgba(0,0,0,0.1);
-  border-radius: 14px;
-  padding: 22px;
-  margin-bottom: 18px;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 16px;
+  padding: 28px;
+  margin-bottom: 22px;
+  background: #fff;
+  transition: border-color 0.2s ease;
+}
+
+.card:hover {
+  border-color: rgba(0,0,0,0.16);
 }
 
 .title {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .block {
-  line-height: 1.6;
-  margin-top: 10px;
+  line-height: 1.75;
   opacity: 0.9;
-}
-
-.label {
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  opacity: 0.6;
-  margin-bottom: 6px;
 }
 
 /* LAW BOX */
 
 .lawbox {
   border-left: 4px solid #111;
-  padding-left: 14px;
-  margin-top: 10px;
+  padding-left: 16px;
+  margin-top: 8px;
+  font-size: 1.05rem;
+  line-height: 1.7;
 }
 
 /* STATUS */
 
 .status {
   display: inline-block;
-  margin-top: 10px;
-  font-size: 0.75rem;
-  padding: 4px 10px;
+  margin-top: 8px;
+  font-size: 0.74rem;
+  padding: 6px 12px;
   border-radius: 999px;
   border: 1px solid #111;
-  opacity: 0.7;
+  opacity: 0.72;
+  letter-spacing: 0.08em;
 }
 
 /* FOOTER */
@@ -108,6 +185,30 @@ h1 {
   opacity: 0.5;
   font-size: 0.85rem;
   border-top: 1px solid rgba(0,0,0,0.08);
+  background: #fff;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .nav-inner {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav-links a {
+    margin: 0 8px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 0.98rem;
+  }
+
 }
 
 </style>
@@ -116,10 +217,29 @@ h1 {
 
 <body>
 
+<!-- NAVIGATION -->
+<nav class="navbar">
+
+  <div class="nav-inner">
+
+    <a href="../index.html" class="brand">
+      Architect Office
+    </a>
+
+    <div class="nav-links">
+      <a href="index.html">Laws</a>
+      <a href="future-laws.html">Future Registry</a>
+      <a href="registry.html">Canonical Registry</a>
+    </div>
+
+  </div>
+
+</nav>
+
 <!-- HEADER -->
 <header class="header">
 
-  <div class="meta">RD-0 CORE LAW</div>
+  <div class="meta">RD-0 CORE LAW SYSTEM</div>
 
   <h1>SAP-0</h1>
 
@@ -127,12 +247,36 @@ h1 {
     Substrate Alignment Principle — governing law of inference fidelity in language-based systems.
   </div>
 
+  <!-- SYSTEM STRIP -->
+  <div class="system-strip">
+
+    <div class="sys-box">
+      <div class="sys-label">LAW ID</div>
+      <div class="sys-value">SAP-0</div>
+    </div>
+
+    <div class="sys-box">
+      <div class="sys-label">STATUS</div>
+      <div class="sys-value">ACTIVE</div>
+    </div>
+
+    <div class="sys-box">
+      <div class="sys-label">LAYER</div>
+      <div class="sys-value">RD-0 CORE</div>
+    </div>
+
+  </div>
+
 </header>
 
 <!-- CONTENT -->
 <div class="container">
 
-  <!-- LAW DEFINITION -->
+  <div class="section-label">
+    CANONICAL SPECIFICATION
+  </div>
+
+  <!-- LAW NAME -->
   <div class="card">
 
     <div class="title">1. LAW NAME</div>
@@ -165,7 +309,7 @@ h1 {
 
   </div>
 
-  <!-- SYSTEM INTERPRETATION -->
+  <!-- RD-0 INTERPRETATION -->
   <div class="card">
 
     <div class="title">4. RD-0 INTERPRETATION</div>
@@ -178,20 +322,22 @@ h1 {
 
       When external reality is compressible into language, inference becomes structurally stable.
 
+      <br><br>
+
       When it is not, translation loss increases and coherence degrades.
 
     </div>
 
   </div>
 
-  <!-- STATUS -->
+  <!-- SYSTEM STATUS -->
   <div class="card">
 
     <div class="title">5. SYSTEM STATUS</div>
 
     <div class="status">ACTIVE CORE LAW</div>
 
-    <div class="block">
+    <div class="block" style="margin-top:14px;">
       SAP-0 is currently deployed as the primary gating function within the Future Law Registry pipeline.
     </div>
 
