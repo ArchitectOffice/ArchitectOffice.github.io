@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,27 +18,28 @@
 
 body {
   background: #ffffff;
+  color: #111;
 }
 
-.law-header {
+.header {
   padding: 80px 20px 40px;
   text-align: center;
   border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
-.law-id {
-  font-size: 0.8rem;
-  letter-spacing: 0.12em;
+.meta {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
   opacity: 0.6;
 }
 
-.law-title {
+.title {
   font-size: 2rem;
   font-weight: 700;
   margin-top: 10px;
 }
 
-.law-subtitle {
+.subtitle {
   max-width: 900px;
   margin: 20px auto 0;
   opacity: 0.7;
@@ -60,39 +60,52 @@ body {
   border-radius: 12px;
   padding: 25px;
   margin-top: 20px;
+  background: #fff;
 }
 
 .label {
   font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  opacity: 0.6;
-  margin-bottom: 8px;
-}
-
-h3 {
-  font-size: 1.2rem;
+  letter-spacing: 0.15em;
+  opacity: 0.55;
   margin-bottom: 10px;
 }
 
+h3 {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
 p {
-  line-height: 1.7;
-  opacity: 0.85;
+  line-height: 1.75;
+  opacity: 0.88;
 }
 
 .math {
-  font-family: monospace;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
   background: rgba(0,0,0,0.03);
-  padding: 15px;
+  padding: 16px;
   border-radius: 10px;
-  margin-top: 10px;
+  margin-top: 12px;
   white-space: pre-wrap;
+  font-size: 0.95rem;
 }
 
 .footer {
   text-align: center;
-  padding: 40px 20px;
-  opacity: 0.5;
+  padding: 50px 20px;
+  opacity: 0.55;
   font-size: 0.85rem;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 10px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  margin-top: 10px;
+  opacity: 0.7;
 }
 
 </style>
@@ -102,19 +115,21 @@ p {
 <body>
 
 <!-- HEADER -->
-<header class="law-header">
+<header class="header">
 
-  <div class="law-id">RD-0 CORE LAW • SAP-0</div>
+  <div class="meta">RD-0 CORE LAW • CANONICAL REGISTRY ENTRY</div>
 
-  <div class="law-title">Substrate Alignment Principle</div>
+  <div class="title">SAP-0 — Substrate Alignment Principle</div>
 
-  <div class="law-subtitle">
-    A formal RD-0 law defining when linguistic inference systems achieve maximal reasoning fidelity through structural alignment between domain representation and token substrate.
+  <div class="subtitle">
+    A formal RD-0 law defining when linguistic inference systems achieve maximal reasoning fidelity through structural alignment between a domain and its linguistic representation substrate.
   </div>
+
+  <div class="badge">STATUS: ACTIVE CORE LAW</div>
 
 </header>
 
-<!-- DEFINITION -->
+<!-- LAW STATEMENT -->
 <section class="section">
 
   <div class="container-narrow">
@@ -131,8 +146,8 @@ p {
       </p>
 
       <p>
-        In simplified form: reasoning performance increases as structural alignment
-        between domain and language increases.
+        In simplified terms, reasoning performance increases as structural alignment
+        between domain representation and language representation increases.
       </p>
 
     </div>
@@ -141,33 +156,34 @@ p {
 
 </section>
 
-<!-- STRUCTURAL MODEL -->
+<!-- SYSTEM MODEL -->
 <section class="section">
 
   <div class="container-narrow">
 
     <div class="block">
 
-      <div class="label">RD-0 MODEL</div>
+      <div class="label">INFERENCE MODEL</div>
 
-      <h3>System Mapping</h3>
+      <h3>RD-0 Structural Mapping</h3>
 
       <p>
-        The inference system operates across three spaces:
+        The inference process operates across three primary transformation spaces:
       </p>
 
       <div class="math">
 E (External Domain Space)
-↓ encode
+        ↓ encode
 L (Linguistic Token Space)
-↓ process
+        ↓ process
 I (Internal Model Space)
-↓ decode
-E' (Reconstructed Domain)
+        ↓ decode
+E' (Reconstructed / Predicted Domain)
       </div>
 
       <p>
-        Where degradation occurs at each non-isomorphic transformation boundary.
+        At each transformation boundary, representational distortion may occur,
+        reducing downstream inference fidelity.
       </p>
 
     </div>
@@ -176,7 +192,7 @@ E' (Reconstructed Domain)
 
 </section>
 
-<!-- LAW CONDITION -->
+<!-- ALIGNMENT CONDITION -->
 <section class="section">
 
   <div class="container-narrow">
@@ -188,7 +204,7 @@ E' (Reconstructed Domain)
       <h3>Alignment Function</h3>
 
       <p>
-        Let A(E, L) represent structural alignment between domain and language.
+        Define A(E, L) as the structural alignment function between domain and language representation.
       </p>
 
       <div class="math">
@@ -198,7 +214,7 @@ Performance ∝ A(E, L)
       </div>
 
       <p>
-        Where A increases as translation loss decreases and structural similarity increases.
+        Where A increases as translation loss decreases and structural isomorphism increases.
       </p>
 
     </div>
@@ -207,31 +223,41 @@ Performance ∝ A(E, L)
 
 </section>
 
-<!-- INTERPRETATION -->
+<!-- INTERPRETIVE ZONES -->
 <section class="section">
 
   <div class="container-narrow">
 
     <div class="block">
 
-      <div class="label">INTERPRETATION</div>
+      <div class="label">HIGH ALIGNMENT DOMAIN</div>
 
-      <h3>High Alignment Domains</h3>
+      <h3>Maximal Fidelity Conditions</h3>
 
       <p>
-        Domains such as mathematics, code, logic, and structured language systems
-        exhibit high fidelity because E ≈ L.
+        Domains that are already native to linguistic structure (mathematics, code,
+        formal logic, structured legal systems) exhibit high inference stability.
+      </p>
+
+      <p>
+        In these cases, E ≈ L and transformation overhead approaches minimal loss.
       </p>
 
     </div>
 
     <div class="block">
 
-      <h3>Low Alignment Domains</h3>
+      <div class="label">LOW ALIGNMENT DOMAIN</div>
+
+      <h3>Degraded Fidelity Conditions</h3>
 
       <p>
-        Physical, sensory, and high-dimensional real-world systems require compression
-        into language, introducing structural distortion and inference drift.
+        Physical, sensory, or high-dimensional systems require compression into language,
+        introducing representational distortion and probabilistic drift.
+      </p>
+
+      <p>
+        These systems exhibit increased uncertainty under token-based inference.
       </p>
 
     </div>
@@ -249,13 +275,13 @@ Performance ∝ A(E, L)
 
       <div class="label">COROLLARIES</div>
 
-      <h3>Derived Rules</h3>
+      <h3>Derived System Rules</h3>
 
-      <p><b>COR-1:</b> Compression efficiency increases reasoning stability.</p>
+      <p><b>COR-1:</b> Compression efficiency directly increases reasoning stability.</p>
 
-      <p><b>COR-2:</b> Translation loss reduces inference accuracy proportionally.</p>
+      <p><b>COR-2:</b> Translation loss is proportional to inference degradation.</p>
 
-      <p><b>COR-3:</b> Language-contained systems form closed reasoning loops.</p>
+      <p><b>COR-3:</b> Fully linguistic domains form closed inference loops with minimal entropy leakage.</p>
 
     </div>
 
@@ -264,11 +290,11 @@ Performance ∝ A(E, L)
 </section>
 
 <!-- FOOTER -->
-<div class="footer">
+<footer class="footer">
 
-  SAP-0 • RD-0 LAW REGISTRY • ZEITCORE COMPATIBLE SYSTEM NODE
+  SAP-0 • RD-0 LAW REGISTRY • ZEITCORE COMPATIBLE NODE • VERSION 1.0
 
-</div>
+</footer>
 
 </body>
 
