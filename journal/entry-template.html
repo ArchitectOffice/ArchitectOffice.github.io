@@ -107,12 +107,6 @@ textarea {
   opacity: 0.9;
 }
 
-.hint {
-  font-size: 0.85rem;
-  opacity: 0.6;
-  margin-top: 6px;
-}
-
 .footer {
   text-align: center;
   padding: 40px 20px;
@@ -136,7 +130,6 @@ textarea {
 
   <div class="subtitle">
     Structured input layer for capturing system observations, interaction drift, and emergent behavioural signals.
-    Entries created here feed directly into the Journal → Future Law pipeline.
   </div>
 
 </header>
@@ -146,19 +139,16 @@ textarea {
 
   <div class="container-narrow">
 
-    <!-- TITLE -->
     <div class="form-block">
       <label>ENTRY TITLE</label>
-      <input type="text" placeholder="Short descriptive label of the observation">
-      <div class="hint">Keep it structural, not narrative.</div>
+      <input type="text" id="title">
     </div>
 
-    <!-- TYPE + CONFIDENCE -->
     <div class="row">
 
       <div class="form-block">
         <label>TYPE</label>
-        <select>
+        <select id="type">
           <option>Observation</option>
           <option>System Behaviour</option>
           <option>Hypothesis</option>
@@ -169,7 +159,7 @@ textarea {
 
       <div class="form-block">
         <label>CONFIDENCE</label>
-        <select>
+        <select id="confidence">
           <option>Low</option>
           <option>Medium</option>
           <option>High</option>
@@ -178,47 +168,41 @@ textarea {
 
     </div>
 
-    <!-- CONTEXT -->
     <div class="form-block">
       <label>CONTEXT</label>
-      <textarea placeholder="Where and how this was observed (system, AI interaction, process, etc.)"></textarea>
+      <textarea id="context"></textarea>
     </div>
 
-    <!-- RAW OBSERVATION -->
     <div class="form-block">
       <label>RAW OBSERVATION</label>
-      <textarea placeholder="Describe what happened (no interpretation required)"></textarea>
+      <textarea id="raw"></textarea>
     </div>
 
-    <!-- SIGNAL -->
     <div class="form-block">
       <label>SIGNAL EXTRACTED</label>
-      <textarea placeholder="What is the structural insight or pattern?"></textarea>
+      <textarea id="signal"></textarea>
     </div>
 
-    <!-- REPEATABILITY -->
     <div class="form-block">
       <label>REPEATABILITY</label>
-      <select>
+      <select id="repeatability">
         <option>One-off</option>
         <option>Repeated</option>
         <option>Stable Pattern</option>
       </select>
     </div>
 
-    <!-- RD-0 TAG -->
     <div class="form-block">
       <label>RD-0 TAG</label>
-      <select>
-        <option>RD-0E (External System)</option>
-        <option>RD-0I (Internal Inference)</option>
-        <option>RD-0H (Human Layer)</option>
+      <select id="tag">
+        <option>RD-0E</option>
+        <option>RD-0I</option>
+        <option>RD-0H</option>
       </select>
     </div>
 
-    <!-- SUBMIT -->
     <div style="text-align:center; margin-top:30px;">
-      <button class="btn">
+      <button class="btn" onclick="saveEntry()">
         Capture Journal Entry
       </button>
     </div>
@@ -229,10 +213,36 @@ textarea {
 
 <!-- FOOTER -->
 <footer class="footer">
-
   RD-0 JOURNAL SYSTEM • CAPTURE NODE • ARCHITECT OFFICE
-
 </footer>
+
+<!-- SCRIPT (clean placement) -->
+<script>
+function saveEntry() {
+
+  const entry = {
+    title: document.getElementById('title').value,
+    type: document.getElementById('type').value,
+    confidence: document.getElementById('confidence').value,
+    context: document.getElementById('context').value,
+    raw: document.getElementById('raw').value,
+    signal: document.getElementById('signal').value,
+    repeatability: document.getElementById('repeatability').value,
+    tag: document.getElementById('tag').value,
+    timestamp: new Date().toISOString()
+  };
+
+  let journal = JSON.parse(localStorage.getItem("rd0_journal") || "[]");
+
+  journal.unshift(entry);
+
+  localStorage.setItem("rd0_journal", JSON.stringify(journal));
+
+  alert("Journal entry captured");
+
+  window.location.href = "index.html";
+}
+</script>
 
 </body>
 
