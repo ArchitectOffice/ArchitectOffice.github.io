@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>RD-0 Entry Node | Structured Capture</title>
+
+<link rel="icon" href="../assets/favicon.ico" />
+<link href="../css/styles.css" rel="stylesheet" />
+
+<style>
+
+body {
+  background: #fff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.header {
+  background: #111;
+  color: #fff;
+  padding: 80px 20px 50px;
+  text-align: center;
+}
+
+.meta {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  opacity: 0.6;
+}
+
+h1 {
+  margin-top: 10px;
+}
+
+.subtitle {
+  max-width: 900px;
+  margin: 15px auto 0;
+  opacity: 0.75;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.block {
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  opacity: 0.6;
+  display: block;
+  margin-bottom: 8px;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.2);
+  font-size: 1rem;
+}
+
+textarea {
+  min-height: 120px;
+}
+
+button {
+  padding: 12px 16px;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: 600;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.hint {
+  font-size: 0.8rem;
+  opacity: 0.6;
+  margin-top: 6px;
+}
+
+.footer {
+  text-align: center;
+  padding: 40px 20px;
+  opacity: 0.5;
+  font-size: 0.85rem;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.lock {
+  font-size: 0.75rem;
+  color: #2e7d32;
+  margin-top: 10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+
+  <div class="meta">RD-0 STRUCTURED ENTRY NODE</div>
+
+  <h1>Journal Capture Interface</h1>
+
+  <div class="subtitle">
+    Structured signal intake for system observation, behavioural drift detection, and future law candidate generation.
+  </div>
+
+</header>
+
+<!-- FORM -->
+<div class="container">
+
+  <div class="block">
+    <label>ENTRY TITLE</label>
+    <input id="title" type="text" placeholder="Structural label of observation">
+  </div>
+
+  <div class="block">
+    <label>TYPE</label>
+    <select id="type">
+      <option>Observation</option>
+      <option>System Behaviour</option>
+      <option>Hypothesis</option>
+      <option>Interaction Drift</option>
+      <option>Anomaly</option>
+    </select>
+  </div>
+
+  <div class="block">
+    <label>CONFIDENCE</label>
+    <select id="confidence">
+      <option>Low</option>
+      <option>Medium</option>
+      <option>High</option>
+    </select>
+  </div>
+
+  <div class="block">
+    <label>CONTEXT</label>
+    <textarea id="context" placeholder="System or environment context"></textarea>
+  </div>
+
+  <div class="block">
+    <label>RAW OBSERVATION</label>
+    <textarea id="raw" placeholder="What happened (no interpretation)"></textarea>
+  </div>
+
+  <div class="block">
+    <label>SIGNAL EXTRACTED</label>
+    <textarea id="signal" placeholder="Core structural insight"></textarea>
+  </div>
+
+  <div class="block">
+    <label>REPEATABILITY</label>
+    <select id="repeatability">
+      <option>One-off</option>
+      <option>Repeated</option>
+      <option>Stable Pattern</option>
+    </select>
+  </div>
+
+  <div class="block">
+    <label>RD-0 TAG</label>
+    <select id="tag">
+      <option>RD-0E</option>
+      <option>RD-0I</option>
+      <option>RD-0H</option>
+    </select>
+  </div>
+
+  <button onclick="submitEntry()">Capture Entry</button>
+
+  <div class="lock" id="status"></div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  RD-0 ENTRY SYSTEM • STRUCTURED COGNITION NODE
+</footer>
+
+<script>
+
+/* ---------------- SAFE VALIDATION CORE ---------------- */
+
+function validate(entry) {
+
+  if (!entry.title || entry.title.length < 3) return false;
+  if (!entry.signal || entry.signal.length < 5) return false;
+
+  return true;
+}
+
+/* ---------------- ENTRY CREATION ---------------- */
+
+function submitEntry() {
+
+  const entry = {
+
+    title: document.getElementById("title").value.trim(),
+    type: document.getElementById("type").value,
+    confidence: document.getElementById("confidence").value,
+    context: document.getElementById("context").value.trim(),
+    raw: document.getElementById("raw").value.trim(),
+    signal: document.getElementById("signal").value.trim(),
+    repeatability: document.getElementById("repeatability").value,
+    tag: document.getElementById("tag").value,
+    timestamp: new Date().toISOString(),
+
+    /* SYSTEM METADATA (ANTI-TAMPER LAYER) */
+    origin: "rd0-entry-node",
+    state: "journal",
+    version: "1.0"
+
+  };
+
+  if (!validate(entry)) {
+    document.getElementById("status").innerText =
+      "ENTRY REJECTED — insufficient structural data";
+    return;
+  }
+
+  let journal = JSON.parse(localStorage.getItem("rd0_journal") || "[]");
+
+  journal.unshift(entry);
+
+  localStorage.setItem("rd0_journal", JSON.stringify(journal));
+
+  document.getElementById("status").innerText =
+    "ENTRY CAPTURED ✔";
+
+  setTimeout(() => {
+    window.location.href = "../laws/future-laws.html";
+  }, 600);
+
+}
+
+</script>
+
+</body>
+
+</html>
